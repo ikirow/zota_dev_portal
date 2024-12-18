@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,500,900');
+.editor-styles-wrapper {
+  font-family: 'Lato', sans-serif !important;
+
+  /* Main column width */
+  .wp-block {
+    max-width: 1200px;
+  }
+
+  /* Width of "full-wide" blocks */
+  .wp-block[data-align="full"] {
+    max-width: 100%;
+  }
+
+}
+.editor-styles-wrapper {
+
+  @import "variables/variables-site";
+  @import "mixins/mixins-master";
+  @import "elements/elements";
+  @import "elements/lists";
+  @import "elements/tables";
+  @import "gutenberg/gutenberg";
+
+}

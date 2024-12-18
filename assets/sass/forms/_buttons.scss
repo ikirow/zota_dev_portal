@@ -1,0 +1,554 @@
+button,
+.button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.wp-block-button__link {
+  border: 0 none;
+  border-radius: 1.55em;
+  background: $color__background-button;
+  color: $color__text-button;
+  font-size: 1rem;
+  padding: 0.667em 1.333em;
+  cursor: pointer;
+  transition: all 0.2s $easing;
+  min-width: rem(215);
+  font-weight: 500;
+  &:hover {
+    // background: $color__background-button-hover;
+  }
+
+  &:active,
+  &:focus {
+    // background: $color__background-button-focus;
+  }
+
+  &:disabled,
+  &[disabled],
+  .disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+}
+
+.wp-block-button {
+  a {
+    &:visited {
+      color: $white;
+    }
+  }
+}
+
+.region-list-holder {
+  .wp-block-button {
+    a {
+      &:visited {
+        color: $main-blue;
+      }
+    }
+  }
+  .wp-block-button__link {
+    min-width: initial !important;
+    min-width: initial !important;
+    font-size: rem(12px);
+    background-size: rem(16px) !important;
+    padding-right: rem(24px) !important;
+  }
+
+  .wp-block-uagb-image {
+    img {
+      max-height: rem(142);
+    }
+  }
+}
+
+button,
+.button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.wp-block-button__link {
+  border: 0 none;
+  border-radius: 1.55em;
+  // background: linear-gradient(89.06deg, #0C0B45 0.71%, transparent 98.36%);
+  background: linear-gradient(14deg, #0c0b45 37.37%, transparent 86.16%);
+  background-color: $color__background-button;
+  font-size: 1rem;
+  padding: rem(12) rem(24);
+  cursor: pointer;
+  transition: all 0.3s $easing;
+  position: relative;
+  font-size: $font-size-m-mobile;
+
+  @include bp(tabletlandscape) {
+    // min-width: rem(249);
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: #114692;
+    // box-shadow: 0px 4px 15px rgba(2, 93, 224, 0.16);
+    background: linear-gradient(
+      10.25deg,
+      #0c2fe6 33.37%,
+      rgba(147, 176, 251, 0) 86.16%
+    );
+    box-shadow: 0px 4px 15px rgba(2, 93, 224, 0.2);
+    // border-radius: 24px;
+    color: $white;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50px;
+    padding: 1px;
+    // background: linear-gradient(
+    //   40.25deg,
+    //   #0c2fe6 37.37%,
+    //   rgba(147, 176, 251, 0) 86.16%
+    // );
+
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  &:visited {
+    background: linear-gradient(269.03deg, #4fb3ec 0.53%, #025de0 97.58%);
+    box-shadow: 0px 4px 15px rgba(2, 93, 224, 0.16);
+    color: $white;
+  }
+
+  &:disabled,
+  &[disabled],
+  .disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+}
+
+.dark-bg {
+  .wp-block-button__link {
+    &:hover {
+      background: linear-gradient(
+        14deg,
+        #0c2fe6 37.37%,
+        rgba(147, 176, 251, 0) 86.16%
+      );
+      filter: drop-shadow(0px 4px 15px rgba(2, 93, 224, 0.2));
+    }
+
+    &:active,
+    &:focus {
+      background: #0c0b45;
+      border: 2px solid $main-blue;
+      box-shadow: 0px 0px 17px rgba(2, 93, 224, 0.7);
+    }
+
+    &:visited {
+      background: linear-gradient(269.03deg, #4fb3ec 0.53%, #025de0 97.58%);
+      box-shadow: 0px 4px 15px rgba(2, 93, 224, 0.16);
+    }
+  }
+}
+
+.is-style-blue-secondary {
+  .wp-block-button__link {
+    &:hover {
+      &::before {
+        border: 1px solid;
+        border-image-source: linear-gradient(
+          40.25deg,
+          #0c2fe6 37.37%,
+          rgba(147, 176, 251, 0) 86.16%
+        );
+      }
+    }
+  }
+}
+
+.contact-us-btn {
+  display: flex !important;
+  align-items: center;
+  position: absolute !important;
+  bottom: rem(0);
+  left: 50%;
+  margin-left: rem(-55) !important;
+  width: rem(111) !important;
+
+  @include bp(tabletlandscape) {
+    margin-left: auto !important;
+    bottom: initial !important;
+    position: relative !important;
+    left: initial !important;
+  }
+
+  a {
+    @extend .wp-block-button__link;
+    background: linear-gradient(0deg, #025de0, #025de0), #8cbbff;
+    // border-radius: 24px;
+    padding: 10px 16px !important;
+    text-align: center;
+    align-self: center;
+    color: $white !important;
+    // width: rem(111) !important;
+    // min-width: initial !important;
+    font-size: rem(14) !important;
+    &:hover {
+      &::before {
+        border: 1px solid;
+        border-image-source: linear-gradient(
+          40.25deg,
+          #0c2fe6 37.37%,
+          rgba(147, 176, 251, 0) 86.16%
+        );
+      }
+
+      &::after {
+        display: none !important;
+      }
+    }
+  }
+}
+
+.is-style-view-more {
+  .wp-block-button__link {
+    // border: 2px solid $main-blue;
+    color: $main-blue !important;
+    border-radius: 50px;
+    padding: rem(7) rem(43) rem(7) rem(0);
+    background-image: url("../icons/view-more-arrow.svg");
+    background-position: 95% center;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    font-size: rem(14);
+    background-size: rem(24);
+    min-width: initial;
+
+    @include bp(tabletlandscape) {
+      font-size: rem(16);
+    }
+
+    &::before {
+      display: none;
+    }
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}
+
+.is-style-blue-button {
+  .wp-block-button__link {
+    // border: 2px solid $main-blue;
+    color: $white !important;
+    background: $main-blue !important;
+    border-radius: 50px;
+    padding: rem(11) rem(21);
+    background-repeat: no-repeat;
+    font-size: rem(14);
+    background-size: rem(24);
+    min-width: initial;
+
+    @include bp(tabletlandscape) {
+      font-size: rem(18);
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.is-style-view-more-right {
+  @extend .is-style-view-more;
+
+  .wp-block-button__link {
+    background-image: url("../icons/chevron_right.svg");
+    background-position: 94% center;
+    font-weight: 500;
+  }
+}
+
+.is-style-link-with-arrow {
+  .wp-block-button__link {
+    border: 0;
+    color: $main-blue !important;
+    border-radius: 50px;
+    padding: rem(7) rem(43) rem(7) rem(28);
+    background-image: url("../icons/zota-arrow-right.svg");
+    background-position: 97% center;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    font-weight: 600;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  &.initial-width {
+    .wp-block-button__link {
+      min-width: initial !important;
+      padding-left: 0;
+      padding-right: rem(30);
+    }
+  }
+
+  &.no-padding-top-bot {
+    .wp-block-button__link {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &.left-aligned {
+    .wp-block-button__link {
+      padding-left: 0;
+      text-align: left;
+      min-width: rem(100);
+    }
+  }
+}
+
+.is-style-link-with-arrow-reverse {
+  @extend .is-style-link-with-arrow;
+
+  .wp-block-button__link {
+    background-image: url("../icons/arrow-right-reverse.svg");
+    background-position: 3% center;
+  }
+}
+
+.is-style-link-with-arrow-secondary {
+  .wp-block-button__link {
+    border: 0;
+    color: $main-blue !important;
+    padding: rem(7) rem(43) rem(7) rem(0);
+    background-image: url("../icons/chevron_right.svg");
+    background-position: 97% center;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    font-weight: 600;
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.is-style-secondary {
+  .wp-block-button__link {
+    background: none;
+    transition: all 0.25s ease-out;
+    background-color: $white;
+    overflow: hidden;
+    color: $accent-blue !important;
+    &:before {
+      display: none;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      background-color: transparent;
+      background: linear-gradient(
+        88.01deg,
+        #4fb3ec 3.93%,
+        #c8e7f9 68.36%,
+        #ffffff 97.67%
+      );
+      transition: all 0.25s ease-out;
+      z-index: -1;
+    }
+  }
+
+  &:hover {
+    .wp-block-button__link {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.is-style-white-outline {
+  .wp-block-button__link {
+    background-color: transparent;
+    border: 1px solid $white;
+    color: $white !important;
+    border-radius: 50px;
+    background: initial;
+    overflow: hidden;
+    &::before {
+      opacity: 0;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      background-color: transparent;
+      background: linear-gradient(
+        40.25deg,
+        #0c2fe6 37.37%,
+        rgba(147, 176, 251, 0) 86.16%
+      );
+      transition: all 0.25s ease-out;
+      z-index: -1;
+    }
+  }
+  &:hover {
+    .wp-block-button__link {
+      border-color: transparent;
+      z-index: 2;
+      &::before {
+        opacity: 1;
+      }
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.with-chevron-right {
+    padding-right: rem(30);
+    display: block;
+    position: relative;
+    margin-left: auto;
+    width: fit-content;
+    span {
+      position: relative;
+      padding: rem(10) rem(40) rem(10) rem(16);
+      min-width: fit-content;
+      width: fit-content;
+      text-align: left;
+      color: $white;
+      border: 1px solid $white;
+      border-radius: rem(24);
+      font-size: rem(18);
+      &::after {
+        content: "";
+        background-color: $white;
+        mask-image: url(../icons/chevron_right.svg);
+        mask-repeat: no-repeat;
+        mask-size: contain;
+        width: rem(24);
+        height: rem(24);
+        position: absolute;
+        right: rem(10);
+        top: rem(10);
+        z-index: 99999999;
+        opacity: 1;
+        left: initial;
+      }
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+.is-style-blue-outline {
+  @extend .is-style-white-outline;
+
+  .wp-block-button__link {
+    border: 1px solid $main-blue;
+    color: $main-blue !important;
+    background-color: $white;
+  }
+
+  &:hover {
+    .wp-block-button__link {
+      color: $white !important;
+    }
+  }
+  //   box-shadow: 0px 0.86px 18px 0px #bbbbbb4f;
+}
+
+.button-with-arrow {
+  color: $main-blue !important;
+  padding-right: rem(36);
+  position: relative;
+  font-size: rem(14);
+
+  @include bp(tabletlandscape) {
+    font-size: rem(18);
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: rem(16);
+    height: rem(16);
+    background-image: url("../icons/arrow-right-blue.svg");
+    background-size: contain;
+
+    @include bp(tabletlandscape) {
+      width: rem(24);
+      height: rem(24);
+    }
+  }
+
+  &.reverse {
+    padding-right: 0;
+    padding-left: rem(36);
+
+    &:after {
+      right: initial;
+      left: 0;
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.is-style-codecov {
+  .wp-block-button__link {
+    background-color: $pink;
+    background-image: url("../icons/codecov1.svg");
+    padding: rem(13) rem(40) rem(13) rem(67);
+    border-radius: 50px;
+    background-repeat: no-repeat;
+    background-position: 40px;
+  }
+}
+
+.is-style-github {
+  .wp-block-button__link {
+    background-color: #24292f;
+    background-image: url("../icons/GitHub_Invertocat_Light.svg");
+    padding: rem(13) rem(40) rem(13) rem(67);
+    border-radius: 50px;
+    background-repeat: no-repeat;
+    background-position: 40px;
+  }
+}
+
+.mobile-justified-center {
+  > .kt-row-column-wrap {
+    .wp-block-kadence-column {
+      &:last-of-type {
+        left: 50%;
+        @include bp(tablet) {
+          left: initial;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+$size__site-main: 100%;
+$size__site-sidebar: 25%;
+
+$site_width: rem(1507);
+$site_width_laptopxs: rem(1200);
+$site_width_tabletlandscape: 90%;
+$site_width_tablet: rem(640);
+
+//Header sizes
+$header_height_mobile: rem(60);
+$header_height_desktop: rem(70);
+
+//Negative values used for hiding the header, should match the above header height
+$header_height_mobile_negative: rem(
+  -#{$header_height_mobile}
+); // todo maybe refactor to automatically take the value from above and make it negative?
+$header_height_desktop_negative: rem(-70);

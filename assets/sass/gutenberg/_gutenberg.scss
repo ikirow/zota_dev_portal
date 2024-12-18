@@ -1,0 +1,223 @@
+// Maps.
+$color: (
+  body-text: #555555,
+  blue: #5483db,
+  black: #000,
+  white: #fff,
+  pink: #e54a7e,
+  lightgreyone: #f4f4f4,
+  lightgreytwo: #ededed,
+  lightgreytree: #00000029,
+  main-blue: #025de0,
+  purple: #8241d2,
+  green: #36bf9e,
+  light-blue-bg: #f0f7fe,
+  accent-blue: #0c0b45,
+  text-secondary: #042f3d,
+);
+
+$font-size: (
+  xs: em(14),
+  s: em(18),
+  m: em(22),
+  l: em(24),
+  xl: em(28),
+);
+
+$font-size-desktop: (
+  xs: em(16),
+  s: em(20),
+  m: em(24),
+  l: em(30),
+  xl: em(46),
+);
+
+// Variables.
+$color-grey-text: #646464;
+$color-dark-grey: #333333;
+$font-size-xs: 16px;
+$font-size-s: 20px;
+$font-size-m: 24px;
+$font-size-l: 30px;
+$font-size-xl: 46px;
+
+/**
+ * Color palette.
+ *
+ * @see resources/styles/shared/_variables.scss
+ */
+@each $name, $value in $color {
+  .has-#{$name}-color {
+    color: $value;
+  }
+
+  .has-#{$name}-background-color {
+    background-color: $value;
+  }
+}
+
+/**
+ * Font sizes.
+ *
+ * @see resources/styles/shared/_variables.scss
+ */
+@each $name, $value in $font-size {
+  .has-#{$name}-font-size {
+    font-size: $value;
+  }
+}
+
+@include bp(tabletlandscape) {
+  @each $name, $value in $font-size-desktop {
+    .has-#{$name}-font-size {
+      font-size: $value;
+    }
+  }
+}
+
+@import "../forms/buttons";
+
+//Simple Flex Columns
+$columns-gap: 0.9375rem;
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -$columns-gap;
+  margin-right: -$columns-gap;
+  .column {
+    padding-left: $columns-gap;
+    padding-right: $columns-gap;
+    padding-bottom: $columns-gap;
+    flex: 1 1 100%;
+    @include bp(tablet) {
+      padding-top: $columns-gap;
+    }
+  }
+
+  &.grid_2 {
+    @include bp(tablet) {
+      .column {
+        flex: 0 0 50%;
+      }
+    }
+  }
+  &.grid_3 {
+    @include bp(tablet) {
+      .column {
+        width: 33.333%;
+        flex: 0 0 33.33333%;
+      }
+    }
+  }
+  &.grid_4 {
+    @include bp(tablet) {
+      .column {
+        width: 50%;
+        flex: 0 0 50%;
+      }
+    }
+    @include bp(tabletlandscape) {
+      .column {
+        width: 25%;
+        flex: 0 0 25%;
+      }
+    }
+  }
+  &.grid_5 {
+    @include bp(tablet) {
+      .column {
+        width: 20%;
+        flex: 0 0 20%;
+      }
+    }
+    @include bp(tabletlandscape) {
+      .column {
+        width: 20%;
+        flex: 0 0 20%;
+      }
+    }
+  }
+}
+
+body .editor-styles-wrapper {
+  .wp-block {
+    //max-width: 90%;
+  }
+  .wp-block[data-align="full"] {
+    max-width: none;
+  }
+}
+
+.wp-block-cover.alignfull {
+  padding: 0;
+  .wp-block-cover__inner-container {
+    width: 100%;
+  }
+}
+
+.wp-block-columns {
+  margin-bottom: 0;
+  .wp-block-column {
+    margin-bottom: rem(40);
+  }
+}
+
+.wp-block-columns.is-style-more_space {
+  @include bp(laptopxs) {
+    .wp-block-column:not(:first-child) {
+      margin-left: 6em;
+    }
+  }
+}
+
+// Media and TExt element
+
+.wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content {
+  padding: 0;
+  margin-bottom: 2rem;
+  @include bp(laptopxs) {
+    margin-bottom: 0;
+  }
+}
+
+.wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__media {
+  grid-column: 1;
+  grid-row: 2;
+}
+.wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content {
+  grid-column: 1;
+  grid-row: 1;
+}
+.wp-block-media-text.is-stacked-on-mobile {
+  grid-template-columns: 100% !important;
+  @include bp(laptopxs) {
+    grid-template-columns: 1fr 50% !important;
+  }
+}
+
+@include bp(laptopxs) {
+  .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__media {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .wp-block-media-text.has-media-on-the-right.is-stacked-on-mobile
+    .wp-block-media-text__media {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .wp-block-media-text.has-media-on-the-right.is-stacked-on-mobile
+    .wp-block-media-text__content {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+
+.max-height-40 {
+  img {
+    max-height: 40px !important;
+  }
+}

@@ -1,0 +1,45 @@
+// .sticky {
+// 	display: block;
+// }
+
+// .post,
+// .page {
+// 	margin: 0 0 1.5em;
+// }
+
+// .updated:not(.published) {
+// 	display: none;
+// }
+
+// .page-content,
+// .entry-content,
+// .entry-summary {
+// 	margin: 1.5em 0 0;
+// }
+
+// .page-links {
+// 	clear: both;
+// 	margin: 0 0 1.5em;
+// }
+
+//Prestashop page styles
+
+.github-btn {
+  .wp-block-button__link {
+    background-color: $color__text-main;
+    color: $color__background-body;
+    display: flex;
+    margin-right: rem(10);
+    max-height: rem(54);
+
+    &:before {
+      content: "";
+      width: rem(22);
+      height: rem(22);
+      background-image: url("../icons/github-social.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin-right: rem(7);
+    }
+  }
+}
